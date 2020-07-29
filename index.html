@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header>
+<head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,12 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-</header>
+
+    <!--HERE Maps Integration-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
 <body>
     <!--Header/Navigation Bar-->
@@ -45,10 +50,29 @@
             <div class="map-item-wrapper">
                 <div class="map-api-background">
                     <!---Map Integration API from HERE Maps-->
-                    <iframe class="map" src=""
+                    <!--<iframe class="map" src="map.html"
                     width="1350"
                     height="250">
-                    </iframe>
+                    </iframe>-->
+                    <div style="width: 1350px; height: 300px" id="mapContainer"></div>
+                    <script>
+                        // Initialize the platform object:
+                        var platform = new H.service.Platform({
+                            'apikey': '{U_PZTK55B1J5zezYkEKM23glUQjtm61T36HMlfIEkLA}'
+                        });
+
+                        // Obtain the default map types from the platform object
+                        var maptypes = platform.createDefaultLayers();
+
+                        // Instantiate (and display) a map object:
+                        var map = new H.Map(
+                            document.getElementById('mapContainer'),
+                            maptypes.vector.normal.map,
+                            {
+                                zoom: 10,
+                                center: { lng: 13.4, lat: 52.51 }
+                            });
+                    </script>
                 </div>
             </div>
         </div>
