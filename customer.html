@@ -10,76 +10,73 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>EnviroTech Fire Management System</title>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </header>
-
 <body>
     <!--Header/Navigation Bar-->
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
                 <div class="nav-link-wrapper">
-                    <a href="">Search Device Location</a>
-                    <input type="text" name="location" size="15"
-                    maxlength="30"/>
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <form action="">
+                        <input type="submit" value="Search" />
+                        <input type="search" name="search"
+                        placeholder="Enter search location"/> 
+                    </form>
                 </div>
             </div>
-            
+    
             <div class="right-side">
                 <div class="customer">
-                    <a href="customer.html">Register</a>
+                    <a href="customer.html">Customer Details</a>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!--Horizontal Line-->
     <hr />
     <!--Body with Map & Devices-->
-    <div class="content-wrapper">
-        <div class="map-items-wrapper">
-            <div class="map-item-wrapper">
-                <div class="map-api-background">
+    <div class="customer-content-wrapper">
+        <div class="customer-map-items-wrapper">
+            <div class="customermap-item-wrapper">
+                <div class="customer-map-api-background">
                     <!---Map Integration API from HERE Maps-->
                     <iframe class="map" src=""
                     width="1350"
-                    height="250">
+                    height="250"
+                    >
                     </iframe>
                 </div>
             </div>
         </div>
-        <!--HorizontaL Line Device Management Panel-->
-            <hr />
-
-        <p>DEVICE MANAGEMENT</p>
-        <div class="devices-items-wrapper">
-            <div class="device-item-wrapper">
-                    <div class="air-wrapper">
-                        <!--Air Guage-->
-                        <figure class="highcharts-figure">
-                            <div id="container"></div>
-                            <p class="highcharts-description">
-                            </p>
-                        </figure>
-                    </div>
-                    <div class="temp-wrapper">
-                        <!---Temp Guage-->
-                    </div>
-                    <div class="hum-wrapper">
-                        <!--hum Guage-->
-                    </div>
-                    <div class="smoke-level-wrapper">
-                        <!--Smoke level bars-->
-                    </div>
-            </div>
         
+        <!--Horizontal Line-->
+        <hr />
+        <!--Device Management Panel-->
+        <p>CUSTOMER DEVICE MANAGEMENT</p>
+        <div class="customer-devices-items-wrapper">
+            <div class="customer-device-item-wrapper">
+                <div class="customer-air-wrapper">
+                    <!--Air Guage-->
+                </div>
+                <div class="customer-temp-wrapper">
+                    <!--Temp Guage-->
+                </div>
+                <div class="customer-hum-wrapper">
+                    <!--hum Guage-->
+                </div>
+                <div class="customer-smoke-level-wrapper">
+                    <!--Smoke level bars-->
+                </div>
+            </div>
+    
         </div>
     </div>
 
+    <script src="app.js"></script>
 </body>
 
     <!--Footer Details-->
@@ -97,4 +94,5 @@
             EnviroTech
         </p>
     </footer>
+    
 </html>
