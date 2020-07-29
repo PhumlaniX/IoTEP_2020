@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!--Guage Scripts-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <!--HERE Maps Integration-->
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -85,6 +91,11 @@
             <div class="customer-device-item-wrapper">
                 <div class="customer-air-wrapper">
                     <!--Air Guage-->
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
+                        <p class="highcharts-description">
+                        </p>
+                    </figure>
                 </div>
                 <div class="customer-temp-wrapper">
                     <!--Temp Guage-->

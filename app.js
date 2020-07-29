@@ -10,7 +10,7 @@ Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Speedometer'
+        text: 'Customer Air Quality'
     },
 
     pane: {

@@ -78,6 +78,7 @@ head{
 /*Guage*/
 #container {
     height: 400px; 
+    position: relative;
 }
 
 .highcharts-figure, .highcharts-data-table table {
