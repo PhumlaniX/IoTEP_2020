@@ -2,122 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <!--Guage Scripts-->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-    <!--HERE Maps Integration-->
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">   
     <title>EnviroTech Fire Management System</title>
 </head>
 <body>
-    <!--Header/Navigation Bar-->
-    <div class="container">
-        <div class="nav-wrapper">
-            <div class="left-side">
-                <div class="nav-link-wrapper">
-                    <a href="">Search Device Location</a>
-                    <input type="text" name="location" size="15"
-                    maxlength="30"/>
-                </div>
-            </div>
-            
-            <div class="right-side">
-                <div class="customer">
-                    <a href="customer.html">Register</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<nav class="navbar">
+<span class="open-slide">
+ <a href="#" onclick="openSlideMenu()">
+     <svg width="30" height="30">
+        <path d="M0,5 30,5" stroke="#fff"
+        stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#fff" 
+        stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#fff" 
+        stroke-width="5"/>
+     </svg>
+ </a>
+</span>
+    <ul class="navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+</nav>
 
-    <!--Horizontal Line-->
-    <hr />
-    <!--Body with Map & Devices-->
-    <div class="content-wrapper">
-        <div class="map-items-wrapper">
-            <div class="map-item-wrapper">
-                <div class="map-api-background">
-                    <!---Map Integration API from HERE Maps-->
-                    <!--<iframe class="map" src="map.html"
-                    width="1350"
-                    height="250">
-                    </iframe>-->
-                    <div style="width: 1350px; height: 450px" id="mapContainer"></div>
-                    <script>
-                        // Initialize the platform object:
-                        var platform = new H.service.Platform({
-                            'apikey': '{U_PZTK55B1J5zezYkEKM23glUQjtm61T36HMlfIEkLA}'
-                        });
+<div id="side-menu" class="side-nav">
+<a href="#" class="btn-close"
+onclick="closeSlideMenu()">&times;</a>
+<a href="#">Home</a>
+<a href="#">Register</a>
+<a href="#">About</a>
+<a href="#">Contact us</a>
+</div>
 
-                        // Obtain the default map types from the platform object
-                        var maptypes = platform.createDefaultLayers();
+<div id="main">
+    <h1>Fire Management Dashboard</h1>
+</div>
 
-                        // Instantiate (and display) a map object:
-                        var map = new H.Map(
-                            document.getElementById('mapContainer'),
-                            maptypes.vector.normal.map,
-                            {
-                                zoom: 10,
-                                center: { lng: 13.4, lat: 52.51}
-                            });
-                    </script>
-                </div>
-            </div>
-        </div>
-        <!--HorizontaL Line Device Management Panel-->
-            <hr />
 
-        <p>DEVICE MANAGEMENT</p>
-        <div class="devices-items-wrapper">
-            <div class="device-item-wrapper">
-                    <div class="air-wrapper">
-                        <!--Air Guage-->
-                        <figure class="highcharts-figure">
-                            <div id="container"></div>
-                            <p class="highcharts-description">
-                            </p>
-                        </figure>
-                    </div>
-                    <div class="temp-wrapper">
-                        <!---Temp Guage-->
-                    </div>
-                    <div class="hum-wrapper">
-                        <!--hum Guage-->
-                    </div>
-                    <div class="smoke-level-wrapper">
-                        <!--Smoke level bars-->
-                    </div>
-            </div>
-        
-        </div>
-    </div>
+<script>
+    function openSlideMenu(){
+        document.getElementById('side-menu').style.width
+        = '250px';
+        document.getElementById('main').style.marginLeft
+        = '250px';
+    }
+
+    function closeSlideMenu() {
+            document.getElementById('side-menu').style.width
+            = '0';
+            document.getElementById('main').style.marginLeft
+            = '0';
+        }
+
+</script>
 
 </body>
 
-    <!--Footer Details-->
     <footer class="footer">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
         <p>Developed by: <br>
             EnviroTech
         </p>
-    </footer>
+    </footer> 
 </html>
